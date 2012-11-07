@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Speed Reader</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--
+    <link href="assets/css/bootstrap.min-2.2.1.css" rel="stylesheet">
+    -->
+    <link href="assets/css/speed-reader.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <textarea id="source" placeholder="Type your text here...">Hello World!</textarea>
+      <button id="read">Read!</button>
+  	  <p id="text"></p>
+      <p>
+        <strong>p</strong> - play/pause &nbsp;
+        <strong>r</strong> - restart &nbsp; 
+        <strong>k</strong> - faster &nbsp; 
+        <strong>j</strong> - slower &nbsp; 
+        <strong>h</strong> - rewind &nbsp; 
+        <strong>l</strong> - forward
+      </p>
+    </div>
+    <script type="application/dart" src="SpeedReader.dart"></script><!-- To work in the train -->
+    <!--
+    <script src="http://dart.googlecode.com/svn/branches/bleeding_edge/dart/client/dart.js"></script>
+    -->
+    <script src="assets/js/dart.js"></script>
+  </body>
+</html>
