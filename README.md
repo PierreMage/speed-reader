@@ -2,12 +2,7 @@
 
 ## TODO
 
-* Textarea to past text to read
-* new
-* play/pause
-* restart
-* settings
-* words per minute
+* new: set focus to the textarea
 * chunk size
 * font size
 * font color
@@ -27,3 +22,6 @@
 * [A Tour of the Dart Libraries](http://www.dartlang.org/docs/dart-up-and-running/ch03.html)
 * [Dart API Reference](http://api.dartlang.org/docs/continuous/index.html)
 * [Tools for Dart Web Components](http://www.dartlang.org/articles/dart-web-components/tools.html)
+* [Dart Synonym: Translation from Javascript](http://synonym.dartlang.org/)
+* [Your First Web Component with Dart](http://blog.sethladd.com/2012/11/your-first-web-component-with-dart.html)
+* [Using Javascript from Dart](http://www.dartlang.org/articles/js-dart-interop/)
