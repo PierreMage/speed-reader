@@ -1,31 +1,23 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Speed Reader</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--
-    <link href="assets/css/bootstrap.min-2.2.1.css" rel="stylesheet">
-    -->
-    <link href="assets/css/speed-reader.css" rel="stylesheet">
-  </head>
-  <body>
-    <div class="container">
-      <textarea id="source" placeholder="Type your text here...">Hello World!</textarea>
-      <button id="read">Read!</button>
-  	  <p id="text"></p>
-      <p>
-        <strong>p</strong> - play/pause &nbsp;
-        <strong>r</strong> - restart &nbsp; 
-        <strong>k</strong> - faster &nbsp; 
-        <strong>j</strong> - slower &nbsp; 
-        <strong>h</strong> - rewind &nbsp; 
-        <strong>l</strong> - forward
-      </p>
-    </div>
-    <script type="application/dart" src="SpeedReader.dart"></script>
-    <!--
-    <script src="http://dart.googlecode.com/svn/branches/bleeding_edge/dart/client/dart.js"></script>
-    -->
-    <script src="assets/js/dart.js"></script><!-- To work in the train -->
-  </body>
+<head>
+  <title>Speed Reader</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="speed-reader.css">
+</head>
+<body>
+  <div class="container">
+    <textarea id="source" placeholder="Type your text here...">Hello World!</textarea>
+    <button id="read">Read!</button>
+    <p id="text"></p>
+    <p>
+      <strong>P</strong> - play/pause &nbsp; <strong>R</strong> -
+      restart &nbsp; <strong>K</strong> - faster &nbsp; <strong>J</strong>
+      - slower &nbsp; <strong>H</strong> - rewind &nbsp; <strong>L</strong>
+      - forward
+    </p>
+  </div>
+  <script type="application/dart" src="SpeedReader.dart"></script>
+  <script src="packages/browser/dart.js"></script>
+</body>
 </html>

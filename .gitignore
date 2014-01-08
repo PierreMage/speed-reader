@@ -1,4 +1,7 @@
 *.swp
 *.DS_Store
-packages
-web/packages
+.buildlog
+pubspec.lock
+build/
+packages/
+web/packages/
