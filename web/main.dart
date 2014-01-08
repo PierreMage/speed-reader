@@ -3,12 +3,12 @@ library speedreader;
 import 'dart:async';
 import 'dart:html';
 
-final WHITESPACES = new RegExp('\\s+');
+import '../lib/chunks.dart';
 
 class SpeedReader { 
   Timer currentTimer;
   bool reading = false;
-  Text text;
+  Chunks chunks;
   int currentPosition = 0;
   int wordsPerMinute = 300;
   /* TODO
@@ -24,7 +24,7 @@ class SpeedReader {
   }
 
   setText(String text) {
-    this.text = new Text(text);
+    this.chunks = new Chunks(text);
     restart();
   }
 
@@ -61,7 +61,7 @@ class SpeedReader {
   }
 
   void forward() {
-    if (currentPosition >= text.chunksLength()) {
+    if (currentPosition >= chunks.length) {
       return;
     }
     displayChunk(currentPosition++);
@@ -85,13 +85,13 @@ class SpeedReader {
   }
 
   void read() {
-    if (!reading || currentPosition >= text.chunksLength()) {
+    if (!reading || currentPosition >= chunks.length) {
       return;
     }
     int periodInMilliSeconds = 1000 ~/ (wordsPerMinute ~/ 60);
     currentTimer = new Timer.periodic(new Duration(milliseconds: periodInMilliSeconds), (Timer t) {
       forward();
-      if (!reading || currentPosition >= text.chunksLength()) {
+      if (!reading || currentPosition >= chunks.length) {
         t.cancel();
         reading = false;
       }
@@ -99,34 +99,11 @@ class SpeedReader {
   }
   
   void displayChunk(int position) {
-    querySelector('#text').setInnerHtml(text.chunkAt(position));
+    querySelector('#text').setInnerHtml(chunks.chunkAt(position));
   }
 
   void restart() {
     displayChunk(currentPosition = 0);
-  }
-}
-
-class Text {
-  String text;
-  List<String> chunks;
-  //int chunkSize;
-  
-  Text(String text) {
-    this.text = text;
-    chunkText();
-  }
-
-  void chunkText() {
-    this.chunks = text.split(WHITESPACES); //TODO: also use chunkSize
-  }
-
-  String chunkAt(int position) {
-    return chunks[position];
-  }
-
-  int chunksLength() {
-    return chunks.length;
   }
 }
 

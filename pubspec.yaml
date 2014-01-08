@@ -4,3 +4,6 @@ description: Simple speed reader inspired by http://www.spreeder.com/
 dependencies:
   browser: any
   js: any
+  
+dev_dependencies: 
+  unittest: any
