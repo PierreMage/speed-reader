@@ -1,4 +1,4 @@
-library speedreader;
+library chunks;
 
 const WHITESPACES = '\\s+';
 
@@ -10,5 +10,6 @@ class Chunks {
       : _chunks = text.split(new RegExp(separator)); //TODO: also use chunkSize
 
   int get length => _chunks.length;
+  int get lastIndex => length - 1;
   String chunkAt(int position) => _chunks[position];
 }

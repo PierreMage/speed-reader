@@ -2,6 +2,7 @@ name: speed_reader
 version: 0.0.1
 description: Simple speed reader inspired by http://www.spreeder.com/
 dependencies:
+  angular: any
   browser: any
   js: any
   

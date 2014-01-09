@@ -1,23 +1,27 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Speed Reader</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="container">
-    <textarea id="source" placeholder="Type your text here...">Hello World!</textarea>
-    <button id="read">Read!</button>
-    <p id="text"></p>
-    <p>
-      <strong>P</strong> - play/pause &nbsp; <strong>R</strong> -
-      restart &nbsp; <strong>K</strong> - faster &nbsp; <strong>J</strong>
-      - slower &nbsp; <strong>H</strong> - rewind &nbsp; <strong>L</strong>
-      - forward
-    </p>
-  </div>
-  <script type="application/dart" src="main.dart"></script>
-  <script src="packages/browser/dart.js"></script>
-</body>
+<html ng-app>
+  <head>
+    <title>Speed Reader</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body ng-cloak>
+    <div speed-reader>
+      <textarea ng-model="ctrl.text" placeholder="Type your text here..." text="Hello World!">{{ctrl.text}}</textarea>
+      <button ng-click="ctrl.playFromStart()">Read!</button>
+      <p id="text">{{ctrl.currentChunk}}</p>
+      <!--
+      <p>
+        <strong>P</strong> - play/pause &nbsp; 
+        <strong>R</strong> - restart &nbsp; 
+        <strong>K</strong> - faster &nbsp; 
+        <strong>J</strong> - slower &nbsp; 
+        <strong>H</strong> - rewind &nbsp; 
+        <strong>L</strong> - forward
+      </p>
+      -->
+    </div>
+    <script type="application/dart" src="main.dart"></script>
+    <script src="packages/browser/dart.js"></script>
+  </body>
 </html>
